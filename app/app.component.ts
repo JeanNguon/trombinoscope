@@ -1,22 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Person} from './model/person/person';
+import { PersonService } from './service/person.service';
 
 @Component({
-  selector: 'my-app',
-  template: `
-    <h1>{{title}}</h1>
-    <h2>Place des développeurs</h2>
-    <ul class="persons">
-      <li *ngFor="let person of persons"
-        [class.selected]="person === selectedPerson"
-        (click)="onSelect(person)">
-        <span class="badge">{{person.id}}</span> {{person.firstname}} {{person.lastname}}
-      </li>
-    </ul>
-    <my-person-detail [person]="selectedPerson"></my-person-detail>
-  `,
-  styles: [`
-    .selected {
+  	selector: 'my-app',
+  	template: `
+	    <h1>{{title}}</h1>
+	    <h2>Place des développeurs</h2>
+	    <ul class="persons">
+	      <li *ngFor="let person of persons"
+	        [class.selected]="person === selectedPerson"
+	        (click)="onSelect(person)">
+	        <span class="badge">{{person.id}}</span> {{person.firstname}} {{person.lastname}}
+	      </li>
+	    </ul>
+	    <my-person-detail [person]="selectedPerson"></my-person-detail>
+	  `,
+	styles: [`
+	  .selected {
       background-color: #CFD8DC !important;
       color: white;
     }
@@ -63,16 +64,32 @@ import {Person} from './model/person/person';
       margin-right: .8em;
       border-radius: 4px 0 0 4px;
     }
-  `]
+  `], 
+  	//provider make Angular creating new instance of PersonService during AppComponent creation
+	providers: [PersonService]
 })
-export class AppComponent {
-  title = 'Tour of Developpers';
-  persons: Person[];
-  selectedPerson: Person;
 
-  onSelect(person: Person): void {
-    this.selectedPerson = person;
-  }
+export class AppComponent implements OnInit {
+
+	title = 'Tour of Developpers';
+	persons: Person[];
+	selectedPerson: Person;
+	constructor(
+			private personService: PersonService
+		){};
+
+	onSelect(person: Person): void {
+  	  this.selectedPerson = person;
+    }
+    getPersons(): void{
+    	//receive Promise data from PersonService
+    	this.personService.getPersons().then(persons => this.persons = persons);
+    }
+    //LifeCycle Hook that get list of Persons when AppComponent activates
+    ngOnInit():void {
+    	this.getPersons();
+
+	  }
 }
 
 

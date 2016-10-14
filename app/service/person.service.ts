@@ -4,7 +4,7 @@ import { PERSONS } from './../mock/mock-person';
 
 @Injectable() //emits metadata
 export class PersonService {
-	getPersons(): Person[]{
-		return PERSONS;
+	getPersons(): Promise<Person[]>{
+		return Promise.resolve(PERSONS);
 	} 
 }

@@ -14,7 +14,7 @@ var PersonService = (function () {
     function PersonService() {
     }
     PersonService.prototype.getPersons = function () {
-        return mock_person_1.PERSONS;
+        return Promise.resolve(mock_person_1.PERSONS);
     };
     PersonService = __decorate([
         core_1.Injectable(), 

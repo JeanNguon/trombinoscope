@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Person} from './model/person/person';
-import { PersonService } from './service/person.service';
+import {Person} from './../../model/person/person';
+import { PersonService } from './../../service/person.service';
 
 @Component({
-  	selector: 'my-app',
+    moduleId: module.id,
+  	selector: 'my-persons',
   	template: `
 	    <h1>{{title}}</h1>
 	    <h2>Place des développeurs</h2>
@@ -69,7 +70,7 @@ import { PersonService } from './service/person.service';
 	providers: [PersonService]
 })
 
-export class AppComponent implements OnInit {
+export class PersonComponent implements OnInit {
 
 	title = 'Tour of Developpers';
 	persons: Person[];

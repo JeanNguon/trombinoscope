@@ -1,18 +1,32 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
+import { RouterModule }   from '@angular/router';
 
-import { AppComponent }  from './app.component';
-import { PersonDetailComponent } from './model/person/person-detail.component'
+import { AppComponent }  from './component/app/app.component';
+import { PersonComponent }  from './component/person/person.component';
+import { PersonDetailComponent } from './model/person/person-detail.component';
+import { PersonService } from './service/person.service';
+
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule //gestion des formulaires
+    FormsModule,
+    RouterModule.forRoot([
+    	{
+    		path: 'persons',
+    		component: PersonComponent
+    	}
+    ])
   ],
   declarations: [
-    AppComponent,
-    PersonDetailComponent
+    PersonComponent,
+    PersonDetailComponent,
+    AppComponent
+  ],
+  providers: [
+  	PersonService,
   ],
   bootstrap: [ AppComponent ]
 })

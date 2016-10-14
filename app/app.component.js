@@ -9,16 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var PERSONS = [
-    { id: 11, firstname: 'Jean', lastname: 'Nguon' },
-    { id: 12, firstname: 'Mael', lastname: 'Gadbois' },
-    { id: 13, firstname: 'Hugo', lastname: 'Colas' },
-    { id: 14, firstname: 'Florian', lastname: 'Fagniez' }
-];
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour of Developpers';
-        this.persons = PERSONS;
     }
     AppComponent.prototype.onSelect = function (person) {
         this.selectedPerson = person;

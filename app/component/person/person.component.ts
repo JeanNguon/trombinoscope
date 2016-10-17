@@ -8,7 +8,8 @@ import { PersonService } from './../../service/person.service';
 @Component({
     moduleId: module.id,
   	selector: 'my-persons',
-  	templateUrl:  './../../../person.component.html',
+  	templateUrl:  './../../../view/person.component.html',
+
 	
   	//provider make Angular creating new instance of PersonService during AppComponent creation
 	providers: [PersonService]

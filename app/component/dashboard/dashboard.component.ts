@@ -6,7 +6,9 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'my-dashboard',
-  templateUrl: './dashboard.component.html',
+  templateUrl: './view/dashboard.component.html',
+  styleUrls: [ './css/dashboard.component.css' ]
+
 })
 export class DashboardComponent implements OnInit {
 //Define array of persons
@@ -14,7 +16,7 @@ export class DashboardComponent implements OnInit {
 //inject person service into the constructor and hold it in private personService Field
   constructor(
   	private personService: PersonService,
-  	private router: Router,
+  	private router: Router
   	) { }
 
   ngOnInit(): void {

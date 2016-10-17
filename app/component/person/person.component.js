@@ -37,7 +37,7 @@ var PersonComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'my-persons',
-            templateUrl: './../../../person.component.html',
+            templateUrl: './../../../view/person.component.html',
             //provider make Angular creating new instance of PersonService during AppComponent creation
             providers: [person_service_1.PersonService]
         }), 

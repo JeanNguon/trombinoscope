@@ -8,31 +8,7 @@ import { PersonService } from './../../service/person.service';
 @Component({
     moduleId: module.id,
   	selector: 'my-persons',
-  	template: `
-	    <h2>Place des développeurs</h2>
-	    <ul class="persons list-group">
-	      <li *ngFor="let person of persons"
-	        [class.selected]="person === selectedPerson"
-	        (click)="onSelect(person)">
-          <div class="list-group-item">
-	          <article>
-              <span class="badge">{{person.id}}</span> {{person.firstname}} {{person.lastname}}
-              <div> {{person.skills}}</div>
-            </article>
-            <aside>
-              <img src="{{person.img.src}}" alt="{{person.img.alt}}" height="42" width="42"/>
-            </aside>
-            <br />
-          </div>
-	      </li>
-	    </ul>
-      <div *ngIf="selectedPerson">
-        <h2>
-          {{selectedPerson.firstname | uppercase}} is my hero
-        </h2>
-        <button (click)="gotoDetail()">View Details</button>
-      </div>
-	  `,
+  	templateUrl:  './../../../person.component.html',
 	
   	//provider make Angular creating new instance of PersonService during AppComponent creation
 	providers: [PersonService]

@@ -37,7 +37,7 @@ var PersonComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'my-persons',
-            template: "\n\t    <h2>Place des d\u00E9veloppeurs</h2>\n\t    <ul class=\"persons list-group\">\n\t      <li *ngFor=\"let person of persons\"\n\t        [class.selected]=\"person === selectedPerson\"\n\t        (click)=\"onSelect(person)\">\n          <div class=\"list-group-item\">\n\t          <article>\n              <span class=\"badge\">{{person.id}}</span> {{person.firstname}} {{person.lastname}}\n              <div> {{person.skills}}</div>\n            </article>\n            <aside>\n              <img src=\"{{person.img.src}}\" alt=\"{{person.img.alt}}\" height=\"42\" width=\"42\"/>\n            </aside>\n            <br />\n          </div>\n\t      </li>\n\t    </ul>\n      <div *ngIf=\"selectedPerson\">\n        <h2>\n          {{selectedPerson.firstname | uppercase}} is my hero\n        </h2>\n        <button (click)=\"gotoDetail()\">View Details</button>\n      </div>\n\t  ",
+            templateUrl: './../../../person.component.html',
             //provider make Angular creating new instance of PersonService during AppComponent creation
             providers: [person_service_1.PersonService]
         }), 

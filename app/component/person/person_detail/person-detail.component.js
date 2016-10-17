@@ -9,10 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var person_1 = require('./person');
+var person_1 = require('./../../../model/person/person');
+var person_service_1 = require('./../../../service/person.service');
+var router_1 = require('@angular/router');
+var common_1 = require('@angular/common');
 var PersonDetailComponent = (function () {
-    function PersonDetailComponent() {
+    function PersonDetailComponent(personService, route, location) {
+        this.personService = personService;
+        this.route = route;
+        this.location = location;
     }
+    ;
+    PersonDetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.forEach(function (params) {
+            var id = +params['id'];
+            _this.personService.getPerson(id)
+                .then(function (person) { return _this.person = person; });
+        });
+    };
+    PersonDetailComponent.prototype.goBack = function () {
+        this.location.back();
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', person_1.Person)
@@ -20,9 +38,9 @@ var PersonDetailComponent = (function () {
     PersonDetailComponent = __decorate([
         core_1.Component({
             selector: 'my-person-detail',
-            template: "\n\t  <div *ngIf=\"person\">\n\t    <h2>{{person.firstname}} details!</h2>\n\t    <div><label>id: </label>{{person.id}}</div>\n\t    <div>\n\t      <label for=\"person.firstname\">fistname: </label>\n\t      <input [(ngModel)]=\"person.firstname\" placeholder=\"firstname\"/>\n\t      <label for=\"person.lastname\">lastname: </label>\n\t      <input [(ngModel)]=\"person.lastname\" placeholder=\"lastname\"/>\n\t    </div>\n\t  </div>\n\t",
+            templateUrl: './person-detail.component.html',
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [person_service_1.PersonService, router_1.ActivatedRoute, common_1.Location])
     ], PersonDetailComponent);
     return PersonDetailComponent;
 }());

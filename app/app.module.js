@@ -11,11 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
-var router_1 = require('@angular/router');
 var app_component_1 = require('./component/app/app.component');
 var person_component_1 = require('./component/person/person.component');
-var person_detail_component_1 = require('./model/person/person-detail.component');
+var person_detail_component_1 = require('./component/person/person_detail/person-detail.component');
+var dashboard_component_1 = require('./component/dashboard/dashboard.component');
 var person_service_1 = require('./service/person.service');
+var app_routing_module_1 = require('./routing/app-routing.module');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -24,17 +25,13 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                router_1.RouterModule.forRoot([
-                    {
-                        path: 'persons',
-                        component: person_component_1.PersonComponent
-                    }
-                ])
+                app_routing_module_1.AppRoutingModule,
             ],
             declarations: [
+                app_component_1.AppComponent,
                 person_component_1.PersonComponent,
                 person_detail_component_1.PersonDetailComponent,
-                app_component_1.AppComponent
+                dashboard_component_1.DashboardComponent,
             ],
             providers: [
                 person_service_1.PersonService,

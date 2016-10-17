@@ -1,71 +1,39 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import {Person} from './../../model/person/person';
 import { PersonService } from './../../service/person.service';
+
 
 @Component({
     moduleId: module.id,
   	selector: 'my-persons',
   	template: `
-	    <h1>{{title}}</h1>
 	    <h2>Place des développeurs</h2>
-	    <ul class="persons">
+	    <ul class="persons list-group">
 	      <li *ngFor="let person of persons"
 	        [class.selected]="person === selectedPerson"
 	        (click)="onSelect(person)">
-	        <span class="badge">{{person.id}}</span> {{person.firstname}} {{person.lastname}}
+          <div class="list-group-item">
+	          <article>
+              <span class="badge">{{person.id}}</span> {{person.firstname}} {{person.lastname}}
+              <div> {{person.skills}}</div>
+            </article>
+            <aside>
+              <img src="{{person.img.src}}" alt="{{person.img.alt}}" height="42" width="42"/>
+            </aside>
+            <br />
+          </div>
 	      </li>
 	    </ul>
-	    <my-person-detail [person]="selectedPerson"></my-person-detail>
+      <div *ngIf="selectedPerson">
+        <h2>
+          {{selectedPerson.firstname | uppercase}} is my hero
+        </h2>
+        <button (click)="gotoDetail()">View Details</button>
+      </div>
 	  `,
-	styles: [`
-	  .selected {
-      background-color: #CFD8DC !important;
-      color: white;
-    }
-    .persons {
-      margin: 0 0 2em 0;
-      list-style-type: none;
-      padding: 0;
-      width: 15em;
-    }
-    .persons li {
-      cursor: pointer;
-      position: relative;
-      left: 0;
-      background-color: #EEE;
-      margin: .5em;
-      padding: .3em 0;
-      height: 1.6em;
-      border-radius: 4px;
-    }
-    .persons li.selected:hover {
-      background-color: #BBD8DC !important;
-      color: white;
-    }
-    .persons li:hover {
-      color: #607D8B;
-      background-color: #DDD;
-      left: .1em;
-    }
-    .persons .text {
-      position: relative;
-      top: -3px;
-    }
-    .persons .badge {
-      display: inline-block;
-      font-size: small;
-      color: white;
-      padding: 0.8em 0.7em 0 0.7em;
-      background-color: #607D8B;
-      line-height: 1em;
-      position: relative;
-      left: -1px;
-      top: -4px;
-      height: 1.8em;
-      margin-right: .8em;
-      border-radius: 4px 0 0 4px;
-    }
-  `], 
+	
   	//provider make Angular creating new instance of PersonService during AppComponent creation
 	providers: [PersonService]
 })
@@ -75,22 +43,29 @@ export class PersonComponent implements OnInit {
 	title = 'Tour of Developpers';
 	persons: Person[];
 	selectedPerson: Person;
+
 	constructor(
-			private personService: PersonService
+			private personService: PersonService,
+      private router : Router
 		){};
 
 	onSelect(person: Person): void {
   	  this.selectedPerson = person;
-    }
-    getPersons(): void{
-    	//receive Promise data from PersonService
-    	this.personService.getPersons().then(persons => this.persons = persons);
-    }
-    //LifeCycle Hook that get list of Persons when AppComponent activates
-    ngOnInit():void {
-    	this.getPersons();
+  }
 
-	  }
+  getPersons(): void{
+  	//receive Promise data from PersonService
+   	this.personService.getPersons().then(persons => this.persons = persons);
+  }
+
+  //LifeCycle Hook that get list of Persons when AppComponent activates
+  ngOnInit():void {
+  	this.getPersons();
+	}
+
+  gotoDetail(): void {
+    this.router.navigate(['/detail', this.selectedPerson.id]);
+  }
 }
 
 

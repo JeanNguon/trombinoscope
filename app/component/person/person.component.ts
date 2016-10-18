@@ -9,15 +9,13 @@ import { PersonService } from './../../service/person.service';
     moduleId: module.id,
   	selector: 'my-persons',
   	templateUrl:  './../../../view/person.component.html',
-
-	
+    styleUrls: ['./../../../css/person.component.css'],	
   	//provider make Angular creating new instance of PersonService during AppComponent creation
-	providers: [PersonService]
+	  providers: [PersonService]
 })
 
 export class PersonComponent implements OnInit {
 
-	title = 'Tour of Developpers';
 	persons: Person[];
 	selectedPerson: Person;
 

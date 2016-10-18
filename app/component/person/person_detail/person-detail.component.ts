@@ -6,7 +6,9 @@ import { Location }                 from '@angular/common';
 
 @Component({
   selector: 'my-person-detail',
- templateUrl: './view/person-detail.component.html',
+  templateUrl: './view/person-detail.component.html',
+  styleUrls: [ './../css/person-detail.component.css' ]
+
 
 })
 export class PersonDetailComponent implements OnInit {

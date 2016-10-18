@@ -39,6 +39,7 @@ var PersonDetailComponent = (function () {
         core_1.Component({
             selector: 'my-person-detail',
             templateUrl: './view/person-detail.component.html',
+            styleUrls: ['./../css/person-detail.component.css']
         }), 
         __metadata('design:paramtypes', [person_service_1.PersonService, router_1.ActivatedRoute, common_1.Location])
     ], PersonDetailComponent);

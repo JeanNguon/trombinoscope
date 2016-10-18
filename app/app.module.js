@@ -8,14 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/////////////////////// Module ///////////////////////
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
+/////////////////////// Component ///////////////////////
 var app_component_1 = require('./component/app/app.component');
 var person_component_1 = require('./component/person/person.component');
 var person_detail_component_1 = require('./component/person/person_detail/person-detail.component');
 var dashboard_component_1 = require('./component/dashboard/dashboard.component');
+/////////////////////// Service ///////////////////////
 var person_service_1 = require('./service/person.service');
+/////////////////////// Routing ///////////////////////
 var app_routing_module_1 = require('./routing/app-routing.module');
 var AppModule = (function () {
     function AppModule() {

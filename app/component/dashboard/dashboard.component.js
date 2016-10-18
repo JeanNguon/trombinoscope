@@ -23,7 +23,7 @@ var DashboardComponent = (function () {
         var _this = this;
         //call personService to get list onInit
         this.personService.getPersons()
-            .then(function (persons) { return _this.persons = persons.slice(1, 2); });
+            .then(function (persons) { return _this.persons = persons.slice(0, 3); });
         console.log(this.persons);
     };
     DashboardComponent.prototype.gotoDetail = function (person) {

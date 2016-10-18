@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
 
 //call personService to get list onInit
     this.personService.getPersons()
-      .then(persons => this.persons = persons.slice(1, 2));
+      .then(persons => this.persons = persons.slice(0, 3));
       console.log(this.persons);
   }
 

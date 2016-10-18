@@ -15,7 +15,6 @@ var PersonComponent = (function () {
     function PersonComponent(personService, router) {
         this.personService = personService;
         this.router = router;
-        this.title = 'Tour of Developpers';
     }
     ;
     PersonComponent.prototype.onSelect = function (person) {
@@ -38,6 +37,7 @@ var PersonComponent = (function () {
             moduleId: module.id,
             selector: 'my-persons',
             templateUrl: './../../../view/person.component.html',
+            styleUrls: ['./../../../css/person.component.css'],
             //provider make Angular creating new instance of PersonService during AppComponent creation
             providers: [person_service_1.PersonService]
         }), 

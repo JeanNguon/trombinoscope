@@ -1,6 +1,7 @@
 {
-  "name": "angular-quickstart",
+  "name": "trombinosgop",
   "version": "1.0.0",
+  "description": "Angular 2 trombinoscope for Groupe OnePoint",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lite": "lite-server",
@@ -12,7 +13,6 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/angular/angular.io/blob/master/LICENSE"
     }
   ],
   "dependencies": {
@@ -37,6 +37,6 @@
     "concurrently": "^3.0.0",
     "lite-server": "^2.2.2",
     "typescript": "^2.0.3",
-    "typings":"^1.4.0"
+    "typings": "^1.4.0"
   }
 }

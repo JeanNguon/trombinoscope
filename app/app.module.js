@@ -12,6 +12,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
+var http_1 = require('@angular/http');
+// Imports for loading & configuring the in-memory web api
+var in_memory_web_api_module_1 = require('angular-in-memory-web-api/in-memory-web-api.module');
+var in_memory_data_service_1 = require('./in_memory/in-memory-data.service');
 /////////////////////// Component ///////////////////////
 var app_component_1 = require('./component/app/app.component');
 var person_component_1 = require('./component/person/person.component');
@@ -29,7 +33,9 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                app_routing_module_1.AppRoutingModule,
+                http_1.HttpModule,
+                in_memory_web_api_module_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
+                app_routing_module_1.AppRoutingModule
             ],
             declarations: [
                 app_component_1.AppComponent,

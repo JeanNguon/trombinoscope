@@ -32,6 +32,29 @@ var PersonComponent = (function () {
     PersonComponent.prototype.gotoDetail = function () {
         this.router.navigate(['/detail', this.selectedPerson.id]);
     };
+    PersonComponent.prototype.add = function (firstname) {
+        var _this = this;
+        firstname = firstname.trim();
+        if (!firstname) {
+            return;
+        }
+        this.personService.create(firstname)
+            .then(function (person) {
+            _this.persons.push(person);
+            _this.selectedPerson = null;
+        });
+    };
+    PersonComponent.prototype.delete = function (person) {
+        var _this = this;
+        this.personService
+            .delete(person.id)
+            .then(function () {
+            _this.persons = _this.persons.filter(function (h) { return h !== person; });
+            if (_this.selectedPerson === person) {
+                _this.selectedPerson = null;
+            }
+        });
+    };
     PersonComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
@@ -46,9 +69,4 @@ var PersonComponent = (function () {
     return PersonComponent;
 }());
 exports.PersonComponent = PersonComponent;
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/ 
 //# sourceMappingURL=person.component.js.map

@@ -9,10 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var person_1 = require('./../../../model/person/person');
-var person_service_1 = require('./../../../service/person.service');
 var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
+var person_service_1 = require('./../../../service/person.service');
 var PersonDetailComponent = (function () {
     function PersonDetailComponent(personService, route, location) {
         this.personService = personService;
@@ -31,15 +30,17 @@ var PersonDetailComponent = (function () {
     PersonDetailComponent.prototype.goBack = function () {
         this.location.back();
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', person_1.Person)
-    ], PersonDetailComponent.prototype, "person", void 0);
+    PersonDetailComponent.prototype.save = function () {
+        var _this = this;
+        this.personService.update(this.person)
+            .then(function () { return _this.goBack(); });
+    };
     PersonDetailComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'my-person-detail',
-            templateUrl: './view/person-detail.component.html',
-            styleUrls: ['./../css/person-detail.component.css']
+            templateUrl: '/view/person-detail.component.html',
+            styleUrls: ['/css/person-detail.component.css']
         }), 
         __metadata('design:paramtypes', [person_service_1.PersonService, router_1.ActivatedRoute, common_1.Location])
     ], PersonDetailComponent);

@@ -24,7 +24,6 @@ var DashboardComponent = (function () {
         //call personService to get list onInit
         this.personService.getPersons()
             .then(function (persons) { return _this.persons = persons.slice(0, 3); });
-        console.log(this.persons);
     };
     DashboardComponent.prototype.gotoDetail = function (person) {
         //set link parameters array

@@ -41,11 +41,27 @@ export class PersonComponent implements OnInit {
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedPerson.id]);
   }
+
+  add(firstname: string): void {
+    firstname = firstname.trim();
+    if (!firstname) { return; }
+    this.personService.create(firstname)
+      .then(person => {
+        this.persons.push(person);
+        this.selectedPerson = null;
+    });
+  }
+
+  delete(person: Person): void {
+  this.personService
+      .delete(person.id)
+      .then(() => {
+        this.persons = this.persons.filter(h => h !== person);
+        if (this.selectedPerson === person) { this.selectedPerson = null; }
+   });
 }
 
 
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
+
+}
+

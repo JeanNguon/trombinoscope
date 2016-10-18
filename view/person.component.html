@@ -4,6 +4,7 @@
     [class.selected]="person === selectedPerson"
     (click)="onSelect(person)">
     <span class="badge">{{person.id}}</span> {{person.firstname}}
+ 	<button class="delete" (click)="delete(person); $event.stopPropagation()">X</button>
   </li>
 </ul>
 <div *ngIf="selectedPerson">
@@ -11,4 +12,11 @@
     {{selectedPerson.firstname | uppercase}} is the developper
   </h2>
   <button (click)="gotoDetail()">View Details</button>
+</div>
+<div>
+  <label>Person firstname:</label> 
+  <input #personFirstname />
+  <button (click)=" add(personFirstname.value); personFirstname.value=''">
+    Add
+  </button>
 </div>

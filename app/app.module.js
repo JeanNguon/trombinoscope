@@ -16,11 +16,15 @@ var http_1 = require('@angular/http');
 // Imports for loading & configuring the in-memory web api
 var in_memory_web_api_module_1 = require('angular-in-memory-web-api/in-memory-web-api.module');
 var in_memory_data_service_1 = require('./in_memory/in-memory-data.service');
+/////////////////////// Extension ///////////////////////
+require('./extension/rxjs-extension');
 /////////////////////// Component ///////////////////////
 var app_component_1 = require('./component/app/app.component');
 var person_component_1 = require('./component/person/person.component');
 var person_detail_component_1 = require('./component/person/person_detail/person-detail.component');
 var dashboard_component_1 = require('./component/dashboard/dashboard.component');
+var person_search_component_1 = require('./component/person/person_search/person-search.component');
+;
 /////////////////////// Service ///////////////////////
 var person_service_1 = require('./service/person.service');
 /////////////////////// Routing ///////////////////////
@@ -41,6 +45,7 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 person_component_1.PersonComponent,
                 person_detail_component_1.PersonDetailComponent,
+                person_search_component_1.PersonSearchComponent,
                 dashboard_component_1.DashboardComponent,
             ],
             providers: [

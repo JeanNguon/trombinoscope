@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var person_service_1 = require('./../../service/person.service');
 var router_1 = require('@angular/router');
+var person_service_1 = require('./../../service/person.service');
 var DashboardComponent = (function () {
     //inject person service into the constructor and hold it in private personService Field
     function DashboardComponent(personService, router) {

@@ -18,8 +18,10 @@ export class PersonService {
 	constructor(private http: Http){};
 
 	getPersons(): Promise<Person[]>{
+			//convert Observable to Promise
 			return this.http.get(this.personsUrl)
  			.toPromise()
+ 			//pass the promise back
             .then(response => response.json().data as Person[])
             .catch(this.handleError);
 	};

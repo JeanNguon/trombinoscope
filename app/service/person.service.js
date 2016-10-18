@@ -23,6 +23,7 @@ var PersonService = (function () {
     };
     ;
     PersonService.prototype.getPersons = function () {
+        //convert Observable to Promise
         return this.http.get(this.personsUrl)
             .toPromise()
             .then(function (response) { return response.json().data; })

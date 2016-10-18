@@ -1,0 +1,12 @@
+<aside id="search-component">
+  <h4>Person Search</h4>
+  <label for="">Search by firstname</label>
+  	<input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
+  <div>
+    <div *ngFor="let person of persons | async"
+         (click)="gotoDetail(person)" class="search-result" >
+      {{person.firstname}}
+    </div>
+  </div>
+</aside>

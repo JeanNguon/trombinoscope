@@ -25,6 +25,7 @@ var person_detail_component_1 = require('./component/person/person_detail/person
 var dashboard_component_1 = require('./component/dashboard/dashboard.component');
 var person_search_component_1 = require('./component/person/person_search/person-search.component');
 var carousel_component_1 = require('./component/carousel/carousel.component');
+var image_component_1 = require('./component/image/image.component');
 /////////////////////// Service ///////////////////////
 var person_service_1 = require('./service/person.service');
 /////////////////////// Routing ///////////////////////
@@ -48,6 +49,7 @@ var AppModule = (function () {
                 person_search_component_1.PersonSearchComponent,
                 dashboard_component_1.DashboardComponent,
                 carousel_component_1.CarouselComponent,
+                image_component_1.ImageComponent,
             ],
             providers: [
                 person_service_1.PersonService,

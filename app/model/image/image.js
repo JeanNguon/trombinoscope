@@ -5,4 +5,4 @@ var Image = (function () {
     return Image;
 }());
 exports.Image = Image;
-//# sourceMappingURL=image.interface.js.map
+//# sourceMappingURL=image.js.map

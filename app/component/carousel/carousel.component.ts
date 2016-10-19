@@ -1,125 +1,37 @@
 // Import Component form the angular core package
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 // Import the Image interface
-import {Image} from './../../interface/image.interface';
+import {Image} from './../../model/image/image';
+import { ImageService } from './../../service/image.service';
+
 
 // Compoent Decorator
 @Component({
   //Name of our tag
   selector: 'css-carousel',
   //Template for the tag
-  template: `
-     <div class="carousel">
-
-      <ul class="slides">
-
-        <li> 
-           <h2>test</h2>
-           <img src="" alt="test" />
-        </li>
-        
-        <li> 
-           <h2>test</h2>
-           <img src="" alt="test" />
-        </li>
-         <li> 
-           <h2>test</h2>
-           <img src="" alt="test" />
-        </li>
-         <li> 
-           <h2>test</h2>
-           <img src="" alt="test" />
-        </li>
-         <li> 
-           <h2>test</h2>
-           <img src="" alt="test" />
-        </li>
-         <li> 
-           <h2>test</h2>
-           <img src="" alt="test" />
-        </li>
-      </ul>
-
-    </div>
-  `,
+  templateUrl: './view/carousel.component.html',
   //Styles for the tag
-  styles: [`
-      .carousel{
-          overflow:hidden;
-          width:100%;
-      }
-      .slides{
-          list-style:none;
-          position:relative;
-          width:500%; /* Number of panes * 100% */
-          overflow:hidden; /* Clear floats */
-              /* Slide effect Animations*/
-          -moz-animation:carousel 30s infinite;
-          -webkit-animation:carousel 30s infinite;
-          animation:carousel 30s infinite;
-      }
-      .slides > li{
-          position:relative;
-          float:left;
-          width: 20%; /* 100 / number of panes */
-      }
-      .carousel img{
-          display:block;
-          width:100%;
-          max-width:100%;
-      }
-      .carousel h2{
-          margin-bottom: 0;
-          font-size:1em;
-          padding:1.5em 0.5em 1.5em 0.5em;
-          position:absolute;
-          right:0px;
-          bottom:0px;
-          left:0px;
-          text-align:center;
-          color:#fff;
-          background-color:rgba(0,0,0,0.75);
-          text-transform: uppercase;
-      }
-
-      @keyframes carousel{
-          0%    { left:-5%; }
-          11%   { left:-5%; }
-          12.5% { left:-105%; }
-          23.5% { left:-105%; }
-          25%   { left:-205%; }
-          36%   { left:-205%; }
-          37.5% { left:-305%; }
-          48.5% { left:-305%; }
-          50%   { left:-405%; }
-          61%   { left:-405%; }
-          62.5% { left:-305%; }
-          73.5% { left:-305%; }
-          75%   { left:-205%; }
-          86%   { left:-205%; }
-          87.5% { left:-105%; }
-          98.5% { left:-105%; }
-          100%  { left:-5%; }
-      }
-  `],
+  styleUrls: [ './css/carousel.component.css' ]
 })
 //Carousel Component itself
 export class CarouselComponent implements OnInit{
-   public images = IMAGES;
+  images : Image[] = [];
 
-   //LifeCycle Hook that get list of Persons when AppComponent activates
+  constructor(
+    private imageService: ImageService,
+    private router: Router
+  ){}
+ 
+
+   //LifeCycle Hook that get list of Images when AppComponent activates
   ngOnInit():void {
      //images data to be bound to the template
-     this.images = IMAGES;
-  }
+     this.imageService.getImages()
+      .then(images => this.images = images);
+    }
 }
 
-//IMAGES array implementing Image interface
-var IMAGES: Image[] = [
-  { "title": "We are covered", "url": "images/covered.jpg" },
-  { "title": "Generation Gap", "url": "images/generation.jpg" },
-  { "title": "Potter Me", "url": "images/potter.jpg" },
-  { "title": "Pre-School Kids", "url": "images/preschool.jpg" },
-  { "title": "Young Peter Cech", "url": "images/soccer.jpg" } 
-];
+

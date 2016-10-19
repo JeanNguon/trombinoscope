@@ -17,9 +17,10 @@ var carousel_component_1 = require('./../component/carousel/carousel.component')
 var routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
-    { path: 'detail/:id', component: person_detail_component_1.PersonDetailComponent },
+    { path: 'persons/detail/:id', component: person_detail_component_1.PersonDetailComponent },
     { path: 'persons', component: person_component_1.PersonComponent },
     { path: 'carousel', component: carousel_component_1.CarouselComponent },
+    { path: 'images', component: carousel_component_1.CarouselComponent },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

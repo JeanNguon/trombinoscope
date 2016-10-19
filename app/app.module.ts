@@ -20,7 +20,7 @@ import { DashboardComponent }  from './component/dashboard/dashboard.component';
 import { PersonSearchComponent } from './component/person/person_search/person-search.component';
 
 import { CarouselComponent }  from './component/carousel/carousel.component';
-
+import { ImageComponent }  from './component/image/image.component';
 /////////////////////// Service ///////////////////////
 import { PersonService } from './service/person.service';
 
@@ -44,6 +44,7 @@ import { AppRoutingModule } from './routing/app-routing.module';
     PersonSearchComponent,
     DashboardComponent,
     CarouselComponent,
+    ImageComponent,
   ],
   providers: [
   	PersonService,

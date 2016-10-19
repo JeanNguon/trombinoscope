@@ -39,7 +39,7 @@ export class PersonComponent implements OnInit {
 	}
 
   gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedPerson.id]);
+    this.router.navigate(['/persons/detail', this.selectedPerson.id]);
   }
 
   add(firstname: string): void {

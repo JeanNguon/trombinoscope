@@ -30,7 +30,7 @@ var PersonComponent = (function () {
         this.getPersons();
     };
     PersonComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/detail', this.selectedPerson.id]);
+        this.router.navigate(['/persons/detail', this.selectedPerson.id]);
     };
     PersonComponent.prototype.add = function (firstname) {
         var _this = this;

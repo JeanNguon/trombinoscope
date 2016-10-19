@@ -10,7 +10,11 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
 	let images = [
-		{id: 1, title: 'test', url : 'http://placehold.it/350x150' }
+		{id: 1, title: 'test', url : 'http://placehold.it/350x150' },
+		{id: 2, title: 'test', url : 'http://placehold.it/350x150' },
+		{id: 3, title: 'test', url : 'http://placehold.it/350x150' },
+		{id: 4, title: 'test', url : 'http://placehold.it/350x150' },
+		{id: 5, title: 'test', url : 'http://placehold.it/350x150' },
 	];
     return {persons, images};
   }

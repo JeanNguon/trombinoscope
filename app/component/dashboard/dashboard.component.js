@@ -27,7 +27,7 @@ var DashboardComponent = (function () {
     };
     DashboardComponent.prototype.gotoDetail = function (person) {
         //set link parameters array
-        var link = ['/detail', person.id];
+        var link = ['persons/detail', person.id];
         //pass the array to the router's navigation metod
         this.router.navigate(link);
     };

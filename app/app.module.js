@@ -28,6 +28,7 @@ var carousel_component_1 = require('./component/carousel/carousel.component');
 var image_component_1 = require('./component/image/image.component');
 /////////////////////// Service ///////////////////////
 var person_service_1 = require('./service/person.service');
+var image_service_1 = require('./service/image.service');
 /////////////////////// Routing ///////////////////////
 var app_routing_module_1 = require('./routing/app-routing.module');
 var AppModule = (function () {
@@ -53,6 +54,7 @@ var AppModule = (function () {
             ],
             providers: [
                 person_service_1.PersonService,
+                image_service_1.ImageService,
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

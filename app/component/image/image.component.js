@@ -24,6 +24,7 @@ var ImageComponent = (function () {
         var _this = this;
         //receive Promise data from ImageService
         this.imageService.getImages().then(function (images) { return _this.images = images; });
+        console.log(this.images);
     };
     //LifeCycle Hook that get list of Images when AppComponent activates
     ImageComponent.prototype.ngOnInit = function () {

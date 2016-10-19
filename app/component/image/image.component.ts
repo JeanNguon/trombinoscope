@@ -31,6 +31,7 @@ export class ImageComponent implements OnInit {
   getImages(): void{
   	//receive Promise data from ImageService
    	this.imageService.getImages().then(images => this.images = images);
+     console.log( this.images);
   }
 
   //LifeCycle Hook that get list of Images when AppComponent activates

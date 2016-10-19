@@ -21,8 +21,10 @@ import { PersonSearchComponent } from './component/person/person_search/person-s
 
 import { CarouselComponent }  from './component/carousel/carousel.component';
 import { ImageComponent }  from './component/image/image.component';
+
 /////////////////////// Service ///////////////////////
 import { PersonService } from './service/person.service';
+import { ImageService } from './service/image.service';
 
 /////////////////////// Routing ///////////////////////
 import { AppRoutingModule } from './routing/app-routing.module';
@@ -48,6 +50,7 @@ import { AppRoutingModule } from './routing/app-routing.module';
   ],
   providers: [
   	PersonService,
+    ImageService,
   ],
   bootstrap: [ AppComponent ]
 })

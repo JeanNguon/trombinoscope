@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
 
 	gotoDetail(person: Person): void { 
 		//set link parameters array
-  		let link = ['/detail', person.id];
+  		let link = ['persons/detail', person.id];
   		//pass the array to the router's navigation metod
   		this.router.navigate(link);
 	}

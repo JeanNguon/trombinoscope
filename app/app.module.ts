@@ -17,7 +17,9 @@ import { AppComponent }  from './component/app/app.component';
 import { PersonComponent }  from './component/person/person.component';
 import { PersonDetailComponent } from './component/person/person_detail/person-detail.component';
 import { DashboardComponent }  from './component/dashboard/dashboard.component';
-import { PersonSearchComponent } from './component/person/person_search/person-search.component';;
+import { PersonSearchComponent } from './component/person/person_search/person-search.component';
+
+import { CarouselComponent }  from './component/carousel/carousel.component';
 
 /////////////////////// Service ///////////////////////
 import { PersonService } from './service/person.service';
@@ -41,6 +43,7 @@ import { AppRoutingModule } from './routing/app-routing.module';
     PersonDetailComponent,
     PersonSearchComponent,
     DashboardComponent,
+    CarouselComponent,
   ],
   providers: [
   	PersonService,

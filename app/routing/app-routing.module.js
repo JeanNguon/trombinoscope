@@ -13,11 +13,13 @@ var router_1 = require('@angular/router');
 var dashboard_component_1 = require('./../component/dashboard/dashboard.component');
 var person_component_1 = require('./../component/person/person.component');
 var person_detail_component_1 = require('./../component/person/person_detail/person-detail.component');
+var carousel_component_1 = require('./../component/carousel/carousel.component');
 var routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
     { path: 'detail/:id', component: person_detail_component_1.PersonDetailComponent },
-    { path: 'persons', component: person_component_1.PersonComponent }
+    { path: 'persons', component: person_component_1.PersonComponent },
+    { path: 'carousel', component: carousel_component_1.CarouselComponent },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

@@ -38,7 +38,7 @@ var PersonSearchComponent = (function () {
         });
     };
     PersonSearchComponent.prototype.gotoDetail = function (person) {
-        var link = ['/detail', person.id];
+        var link = ['persons/detail', person.id];
         this.router.navigate(link);
     };
     PersonSearchComponent = __decorate([

@@ -4,10 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
+/////////////////////// LocalStorage ////////////////////////
+/*import {LocalStorageService} from 'angular2-localstorage/LocalStorageEmitter';*/
 
+/////////////////////// InMemoryWebApi ///////////////////////
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api/in-memory-web-api.module';
 import { InMemoryDataService }  from './in_memory/in-memory-data.service';
+
 
 /////////////////////// Extension ///////////////////////
 import './extension/rxjs-extension'
@@ -37,6 +41,7 @@ import { AppRoutingModule } from './routing/app-routing.module';
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
+    /*LocalStorageService,*/
     AppRoutingModule
   ],
   declarations: [
@@ -47,12 +52,14 @@ import { AppRoutingModule } from './routing/app-routing.module';
     DashboardComponent,
     CarouselComponent,
     ImageComponent,
+    
   ],
   providers: [
   	PersonService,
     ImageService,
+   /* LocalStorageService,*/
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent/*, LocalStorageService*/ ]
 })
 
-export class AppModule { }
+export class AppModule {}

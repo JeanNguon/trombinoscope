@@ -47,6 +47,22 @@ export class PersonService {
 	    .catch(this.handleError);
 	}
 
+	/*create(firstname: string): void {
+		var listFirstname = localStorage.getItem('firstnames');
+		if(!this.isStringContainsString(firstname, listFirstname)){
+			if(firstname !== null){
+				listFirstname +=listFirstname+";"+firstname+";";
+			}
+			localStorage.setItem('firstnames', listFirstname);
+		}
+	}*/
+	/**
+	* return position of string
+	*/
+	isStringContainsString(chaine: string, string: string): number{
+		return chaine.indexOf(string);
+	}
+
 	delete(id: number): Promise<void> {
 	  const url = `${this.personsUrl}/${id}`;
 	  return this.http.delete(url, {headers: this.headers})

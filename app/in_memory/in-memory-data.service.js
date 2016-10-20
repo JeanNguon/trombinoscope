@@ -11,10 +11,10 @@ var InMemoryDataService = (function () {
         ];
         var images = [
             { id: 1, title: 'test', url: 'http://placehold.it/350x150' },
-            { id: 2, title: 'test', url: 'http://placehold.it/350x150' },
-            { id: 3, title: 'test', url: 'http://placehold.it/350x150' },
-            { id: 4, title: 'test', url: 'http://placehold.it/350x150' },
-            { id: 5, title: 'test', url: 'http://placehold.it/350x150' },
+            { id: 2, title: 'test1', url: 'http://placehold.it/350x150' },
+            { id: 3, title: 'test2', url: 'http://placehold.it/350x150' },
+            { id: 4, title: 'test3', url: 'http://placehold.it/350x150' },
+            { id: 5, title: 'test4', url: 'http://placehold.it/350x150' },
         ];
         return { persons: persons, images: images };
     };

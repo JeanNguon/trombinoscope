@@ -50,6 +50,21 @@ var PersonService = (function () {
             .then(function (res) { return res.json().data; })
             .catch(this.handleError);
     };
+    /*create(firstname: string): void {
+        var listFirstname = localStorage.getItem('firstnames');
+        if(!this.isStringContainsString(firstname, listFirstname)){
+            if(firstname !== null){
+                listFirstname +=listFirstname+";"+firstname+";";
+            }
+            localStorage.setItem('firstnames', listFirstname);
+        }
+    }*/
+    /**
+    * return position of string
+    */
+    PersonService.prototype.isStringContainsString = function (chaine, string) {
+        return chaine.indexOf(string);
+    };
     PersonService.prototype.delete = function (id) {
         var url = this.personsUrl + "/" + id;
         return this.http.delete(url, { headers: this.headers })

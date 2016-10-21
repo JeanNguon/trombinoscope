@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-/*import {LocalStorage, SessionStorage} from "angular2-localstorage/WebStorage";*/
 
 import {Person} from './../../model/person/person';
 import { PersonService } from './../../service/person.service';
@@ -17,8 +16,8 @@ import { PersonService } from './../../service/person.service';
 
 export class PersonComponent implements OnInit {
 
-/*@SessionStorage()*/ persons: Person[];
-/*@LocalStorage() */selectedPerson: Person;
+  persons: Person[];
+  selectedPerson: Person;
 
 	constructor(
 			private personService: PersonService,

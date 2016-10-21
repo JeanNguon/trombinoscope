@@ -13,7 +13,6 @@ import { InMemoryDataService }  from './in_memory/in-memory-data.service';
 
 /////////////////////// Extension ///////////////////////
 import './extension/rxjs-extension'
-/*import './extension/rxjs-operators';*/
 
 /////////////////////// Component ///////////////////////
 import { AppComponent }  from './component/app/app.component';
@@ -43,7 +42,7 @@ import { AppRoutingModule } from './routing/app-routing.module';
     AppRoutingModule
   ],
   declarations: [
-  	AppComponent,
+    AppComponent,
     PersonComponent,
     PersonDetailComponent,
     PersonSearchComponent,
@@ -53,7 +52,7 @@ import { AppRoutingModule } from './routing/app-routing.module';
     
   ],
   providers: [
-  	PersonService,
+    PersonService,
     ImageService,
   ],
   bootstrap: [ AppComponent]

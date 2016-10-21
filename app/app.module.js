@@ -19,7 +19,6 @@ var in_memory_web_api_module_1 = require('angular-in-memory-web-api/in-memory-we
 var in_memory_data_service_1 = require('./in_memory/in-memory-data.service');
 /////////////////////// Extension ///////////////////////
 require('./extension/rxjs-extension');
-/*import './extension/rxjs-operators';*/
 /////////////////////// Component ///////////////////////
 var app_component_1 = require('./component/app/app.component');
 var person_component_1 = require('./component/person/person.component');

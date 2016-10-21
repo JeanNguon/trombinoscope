@@ -48,6 +48,13 @@ h4 {
 .grid-pad > [class*='col-']:last-of-type {
   padding-right: 20px;
 }
+
+
+person-search{
+  display: block;
+  width: 71%;
+}
+
 @media (max-width: 600px) {
     .module {
       font-size: 10px;

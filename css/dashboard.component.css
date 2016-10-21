@@ -31,6 +31,9 @@ h3 {
     background-color: #607D8B;
     border-radius: 2px;
 }
+article{
+  display: block;
+}
 h4 {
   position: relative;
 }

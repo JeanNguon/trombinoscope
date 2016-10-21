@@ -15,8 +15,10 @@
 </div>
 <div>
   <label>Person firstname:</label> 
-  <input #personFirstname />
+  <input #personFirstname required />
   <button (click)=" add(personFirstname.value); personFirstname.value=''">
     Add
   </button>
+
+ 
 </div>

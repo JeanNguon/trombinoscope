@@ -13,14 +13,13 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
-/////////////////////// LocalStorage ////////////////////////
-/*import {LocalStorageService} from 'angular2-localstorage/LocalStorageEmitter';*/
 /////////////////////// InMemoryWebApi ///////////////////////
 // Imports for loading & configuring the in-memory web api
 var in_memory_web_api_module_1 = require('angular-in-memory-web-api/in-memory-web-api.module');
 var in_memory_data_service_1 = require('./in_memory/in-memory-data.service');
 /////////////////////// Extension ///////////////////////
 require('./extension/rxjs-extension');
+/*import './extension/rxjs-operators';*/
 /////////////////////// Component ///////////////////////
 var app_component_1 = require('./component/app/app.component');
 var person_component_1 = require('./component/person/person.component');
@@ -44,7 +43,6 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 in_memory_web_api_module_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
-                /*LocalStorageService,*/
                 app_routing_module_1.AppRoutingModule
             ],
             declarations: [
@@ -60,7 +58,7 @@ var AppModule = (function () {
                 person_service_1.PersonService,
                 image_service_1.ImageService,
             ],
-            bootstrap: [app_component_1.AppComponent /*, LocalStorageService*/]
+            bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

@@ -30,6 +30,10 @@ var PersonService = (function () {
             .catch(this.handleError);
     };
     ;
+    PersonService.prototype.getPersonsLocalStorage = function () {
+        return JSON.parse(localStorage.getItem('persons'));
+    };
+    ;
     PersonService.prototype.getPerson = function (id) {
         return this.getPersons()
             .then(function (persons) { return persons.find(function (person) { return person.id === id; }); });
@@ -50,15 +54,15 @@ var PersonService = (function () {
             .then(function (res) { return res.json().data; })
             .catch(this.handleError);
     };
-    /*create(firstname: string): void {
+    PersonService.prototype.createLocalStorage = function (firstname, lastname) {
         var listFirstname = localStorage.getItem('firstnames');
-        if(!this.isStringContainsString(firstname, listFirstname)){
-            if(firstname !== null){
-                listFirstname +=listFirstname+";"+firstname+";";
+        if (!this.isStringContainsString(firstname, listFirstname)) {
+            if (firstname !== null) {
+                listFirstname += listFirstname + ";" + firstname + ";";
             }
             localStorage.setItem('firstnames', listFirstname);
         }
-    }*/
+    };
     /**
     * return position of string
     */

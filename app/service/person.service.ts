@@ -25,6 +25,12 @@ export class PersonService {
             .then(response => response.json().data as Person[])
             .catch(this.handleError);
 	};
+
+
+	getPersonsLocalStorage(): Person[]{
+			return JSON.parse( localStorage.getItem('persons'));
+	};
+
 	getPerson(id: number): Promise<Person> {
  		return this.getPersons()
             .then(persons => persons.find(person => person.id === id));
@@ -47,7 +53,7 @@ export class PersonService {
 	    .catch(this.handleError);
 	}
 
-	/*create(firstname: string): void {
+	createLocalStorage(firstname: string, lastname: string): void {
 		var listFirstname = localStorage.getItem('firstnames');
 		if(!this.isStringContainsString(firstname, listFirstname)){
 			if(firstname !== null){
@@ -55,7 +61,8 @@ export class PersonService {
 			}
 			localStorage.setItem('firstnames', listFirstname);
 		}
-	}*/
+	}
+
 	/**
 	* return position of string
 	*/
